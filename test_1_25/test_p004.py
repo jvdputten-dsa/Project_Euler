@@ -1,6 +1,6 @@
 import pytest
 import numpy as np
-from problem_1_25.LargestPalindromeProduct import is_palindrome, generate_product_table
+from problem_1_25.p004_largest_palindrome_product import is_palindrome, generate_product_table
 
 
 @pytest.mark.parametrize('potential_palindrome', [12321, 1221, 99999, 49122194])
@@ -14,5 +14,3 @@ def test_generate_product_table():
     assert (product_table == product_table_fixture).all()
 
 
-#def test_get_largest_palindrome():
-#    []
