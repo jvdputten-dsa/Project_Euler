@@ -26,9 +26,9 @@ def calc_prime_factors(number, prime_list):
 
 
 # get some primes
-prime_list = Eratosthenes_sieve(10000)
-
-print(calc_prime_factors(600851475143, prime_list))
+if __name__ == '__main__':
+    prime_list = Eratosthenes_sieve(10000)
+    print(calc_prime_factors(600851475143, prime_list))
 
 
 
