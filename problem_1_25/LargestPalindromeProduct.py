@@ -1,13 +1,19 @@
 import numpy as np
 
-number_vector = np.arange(1, 1000, 1)
+
+def generate_product_table(start, end):
+    number_vector = np.arange(start, end, 1)
+    product_table = number_vector * number_vector[:, None]
+    return product_table
+
 
 def is_palindrome(number):
-    strnumber= str(number)
+    strnumber = str(number)
     if strnumber == strnumber[::-1]:
         return True
     else:
         return False
+
 
 def get_largest_palindrome(potential_palindromes):
     for potential_palindrome in potential_palindromes:
@@ -16,10 +22,14 @@ def get_largest_palindrome(potential_palindromes):
     return 'no palindromes found'
 
 
-potential_palindromes = list(set(number_vector*number_vector[:,None].flatten()))
-potential_palindromes = np.sort(potential_palindromes)[::-1]
+def main():
+    product_table = generate_product_table(100, 1000)
+    potential_palindromes = np.sort(product_table.flatten())[::-1]
+    print(get_largest_palindrome(potential_palindromes))
 
-print(get_largest_palindrome(potential_palindromes))
+
+if __name__ == '__main__':
+    main()
 
 
 
